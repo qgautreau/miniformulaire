@@ -1,3 +1,12 @@
-h1 {
-    color: red;
+legend {
+    text-align: center;
+    background-color: #563d7c;
+    border-radius: 5px;
+    margin-bottom: 0;
+}
+
+fieldset {
+    border: 2px solid #563d7c;
+    border-top: 0;
+    border-radius: 5px;
 }
