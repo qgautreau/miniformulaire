@@ -11,31 +11,51 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-lg-12">
-                    <form>
+                    <form data-toggle="validator" role="form">
                         <div class="form-group">
-                            <label for="login">Login</label>
-                            <input type="text" class="form-control field" id="login" placeholder="Login">
+                            <label for="inputName" class="control-label">Login</label>
+                            <input type="text" class="form-control" id="inputName" data-minlength="5" placeholder="Login" required>
+                            <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control field" id="password" placeholder="Password">
+                            <label for="inputEmail" class="control-label">Email</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="name@example.com" data-error="Bruh, that email address is invalid" required>
+                            <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <label for="confirm">Confirm Password</label>
-                            <input type="password" class="form-control field" id="confirm" placeholder="Confirm">
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="inputPassword" class="control-label">Password</label>
+                                    <input type="password" data-minlength="5" class="form-control" id="inputPassword" placeholder="Password" required>
+                                    <div class="help-block">Minimum of 5 characters</div>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="inputPasswordConfirm" class="control-label">Confirm Password</label>
+                                    <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match" placeholder="Confirm" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email address</label>
-                            <input type="email" class="form-control field" id="email" placeholder="Email">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Sign in</button>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <button type="reset" class="btn btn-primary">Reset</button>
+                                </div>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-default" id="signin">Sign in</button>
-                        <button type="reset" class="btn btn-default" id="reset">Reset</button>
                     </form>
                 </div>
             </div>
         </div>
         <script src="./static/external/jquery/dist/jquery.min.js"></script>
         <script src="./static/external/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="./static/external/bootstrap-validator/dist/validator.min.js"></script>
+        <script src="./static/external/pwstrength-bootstrap/dist/pwstrength-bootstrap.min.js"></script>
         <script src="./static/js/script.js"></script>
     </body>
 </html>
